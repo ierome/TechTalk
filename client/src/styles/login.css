@@ -1,0 +1,45 @@
+#loginWrapper {
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/GfRLKaE/videoblocks-hi-tech-technology-backgrounds-pack_beu4-jdyg_thumbnail-full10.png')
+}
+#loginWrapper h1 {
+    font-family: 'Righteous', cursive;
+    color: white;
+}
+.loginForm {
+position: relative;
+background-color: white;
+height: 60%;
+width: 25%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+border: 2px solid rgb(39,218,213);
+-webkit-box-shadow: -1px 2px 19px 8px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 2px 19px 8px rgba(0,0,0,0.75);
+box-shadow: -1px 2px 19px 8px rgba(0,0,0,0.75);
+}
+#usernameInput, #passwordInput {
+    height: 50px;
+    margin: 10px;
+    color: black;
+    border: 1px solid rgb(39,218,213);
+}
+#loginSubmit {
+    margin-top: 25px;
+}
+#backLogin {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.hide {
+    display: none;
+}

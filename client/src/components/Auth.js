@@ -1,7 +1,7 @@
 import React from 'react'
-
+import {Redirect} from 'react-router-dom'
 
 export default props => {
 
-    return(<h1>Hello</h1>)
+    return(<Redirect to="/login" />)
 }

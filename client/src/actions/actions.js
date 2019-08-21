@@ -14,8 +14,14 @@ if (localStorage.getItem("username")) {
 // MUST CHANGE localhost to IP ADDRESS
 const socket = io.connect('http://localhost:8000')
 
-socket.on('new person', name => {
-  console.log(name)
+socket.on('new login', username => {
+  console.log(username)
+})
+socket.on('receive message', message => {
+  store.dispatch({
+    type: 'NEW_MESSAGE',
+    payload: message
+  })
 })
 
 export function submitName(name) {
@@ -38,6 +44,7 @@ if (resp.status === 200) {
     type: 'LOGIN',
     payload: {loginerr: false, authorized: true}
   })
+  socket.emit('login', username)
 } else {
   store.dispatch({
     type: 'LOGIN',
@@ -51,5 +58,14 @@ export function logoutUser() {
   store.dispatch({
     type: 'LOGIN',
     payload: {loginerr: false, authorized: false}
+  })
+}
+export function sendMsg(message, room) {
+  let username = localStorage.getItem("username")
+
+  socket.emit('new message', {
+    username: username,
+    text: message,
+    room: room
   })
 }

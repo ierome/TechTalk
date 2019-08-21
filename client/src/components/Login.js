@@ -16,7 +16,8 @@ const [loading, setLoading] = useState(false)
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
 
-    function sendRegister() {
+    function sendRegister(e) {
+        e.preventDefault()
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
